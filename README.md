@@ -158,7 +158,7 @@ Specialist implements the task WITH file changes.
 
 <div align="center">
 
-| 🤖 | **11 Specialized Agents** |
+| 🤖 | **10 Specialized Agents** |
 |:---:|:---|
 | 📋 | **Consult vs Delegate** - Get advice or implementation |
 | 🎯 | **User-in-the-Loop** - Approval at decision points |
