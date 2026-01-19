@@ -7,142 +7,102 @@ A comprehensive multi-agent orchestration system for [OpenCode](https://opencode
 ```
                                     ┌─────────────────────────┐
                                     │       USER INPUT        │
-                                    │   (Complex Request)     │
                                     └───────────┬─────────────┘
                                                 │
                                                 ▼
                                     ┌─────────────────────────┐
-                                    │      ORCHESTRATOR       │◄── Primary Agent
+                                    │      ORCHESTRATOR       │
                                     │  • Analyzes & Plans     │
                                     │  • Delegates Tasks      │
                                     │  • Validates Output     │
-                                    │  • Aggregates Results   │
                                     └───────────┬─────────────┘
                                                 │
                                                 ▼
                                     ┌─────────────────────────┐
-                                    │      TASK TOOL          │◄── Delegates to Subagents
-                                    │   (1-to-Many Pattern)   │
+                                    │      TASK TOOL          │
+                                    │   (Delegates to Agents) │
                                     └───────────┬─────────────┘
                                                 │
                     ┌───────────────────────────┼───────────────────────────┐
                     │                           │                           │
                     ▼                           ▼                           ▼
-                              ┌─────────────────────────────────────────────────┐
-                              │              SPECIALIST SUBAGENTS               │
-                              │  ┌───────────────────────────────────────────┐   │
-                              │  │  @frontend-developer  @backend-architect   │   │
-                              │  │  @mobile-app-builder  @ai-engineer         │   │
-                              │  │  @devops-automator    @rapid-prototyper    │   │
-                              │  │  @sprint-prioritizer  @growth-hacker       │   │
-                              │  │  @security-auditor    @content-creator     │   │
-                              │  └───────────────────────────────────────────┘   │
-                              └─────────────────────────────────────────────────┘
+         ┌────────────────────┐    ┌────────────────────┐    ┌────────────────────┐
+         │   DEVELOPMENT      │    │      DATA AI       │    │    OPERATIONS      │
+         └────────────────────┘    └────────────────────┘    └────────────────────┘
+                     │                            │                            │
+         ┌───────────┼───────────┐       ┌───────┴───────┐       ┌───────────┼───────────┐
+         │           │           │       │               │       │           │           │
+         ▼           ▼           ▼       ▼               ▼       ▼           ▼           ▼
+      FRONTEND    BACKEND     MOBILE      AI          SECURITY    DEVOPS      RAPID      SPRINT
+    DEVELOPER   ARCHITECT    BUILDER   ENGINEER       AUDITOR    AUTOMATOR   PROTOTYPER  PRIORITIZER
+                                                                                       GROWTH
+                                                                                      HACKER
+                                                                                      CONTENT
+                                                                                      CREATOR
                                                 │
                                                 ▼
                                     ┌─────────────────────────┐
-                                    │      VALIDATION         │◄── Checks Acceptance Criteria
-                                    │  • Reviews Output       │
-                                    │  • Requests Revisions   │
-                                    │  • Ensures Quality      │
+                                    │      VALIDATION         │
+                                    │  • Review Output        │
+                                    │  • Check Quality        │
                                     └───────────┬─────────────┘
                                                 │
                                                 ▼
                                     ┌─────────────────────────┐
-                                    │    FINAL DELIVERABLE    │◄── Aggregated Output to User
+                                    │    FINAL OUTPUT         │
                                     └─────────────────────────┘
 ```
 
 ## Agent Tree (Merkle-Style)
 
 ```
-                                    ┌─────────────────────────────┐
-                                    │        ORCHESTRATOR          │ ◄── Primary Agent
-                                    │       (Root Coordinator)     │     Plans & Delegates
-                                    └─────────────────────────────┘
-                                                 │
-                    ┌────────────────────────────┼────────────────────────────┐
-                    │                            │                            │
-                    ▼                            ▼                            ▼
-         ┌────────────────────┐    ┌────────────────────┐    ┌────────────────────┐
-         │   DEVELOPMENT      │    │      DATA AI       │    │    OPERATIONS      │
-         │    SPECIALISTS     │    │    SPECIALISTS     │    │    SPECIALISTS     │
-         └────────────────────┘    └────────────────────┘    └────────────────────┘
-                    │                            │                            │
-        ┌───────────┼───────────┐       ┌─────────┼─────────┐       ┌───────────┼───────────┐
-        │           │           │       │         │         │       │           │           │
-        ▼           ▼           ▼       ▼         ▼         ▼       ▼           ▼           ▼
-    ┌───────┐   ┌───────┐   ┌───────┐ ┌───────┐ ┌───────┐ ┌───────┐ ┌───────┐   ┌───────┐   ┌───────┐
-    │FRONTEND│  │BACKEND│  │ MOBILE│ │   AI  │ │SECURITY│ │DEVOPS │ │ RAPID │   │ SPRINT│   │ GROWTH│
-    │DEVELOP.│  │ARCHIT.│  │BUILDER│ │ENGIN. │ │AUDITOR│ │AUTOMAT│ │PROTOTY│   │PRIORIT│   │ HACKER│
-    └───────┘   └───────┘   └───────┘ └───────┘ └───────┘ └───────┘ └───────┘   └───────┘   └───────┘
-        │           │           │       │         │         │       │           │           │
-        ▼           ▼           ▼       ▼         ▼         ▼       ▼           ▼           ▼
-    ┌───────┐   ┌───────┐   ┌───────┐ ┌───────┐ ┌───────┐ ┌───────┐ ┌───────┐   ┌───────┐   ┌───────┐
-    │CONSULT│   │CONSULT│   │CONSULT│ │CONSULT│ │CONSULT│ │CONSULT│ │CONSULT│   │CONSULT│   │CONSULT│
-    │DELEGAT│   │DELEGAT│   │DELEGAT│ │DELEGAT│ │DELEGAT│ │DELEGAT│ │DELEGAT│   │DELEGAT│   │DELEGAT│
-    └───────┘   └───────┘   └───────┘ └───────┘ └───────┘ └───────┘ └───────┘   └───────┘   └───────┘
-
-                                                      │
-                                                      ▼
-                                    ┌───────────────────────────────────┐
-                                    │        CONTENT CREATOR            │ ◄── Documentation Specialist
-                                    │  • Technical Writing              │
-                                    │  • Marketing Copy                 │
-                                    │  • API Documentation              │
-                                    └───────────────────────────────────┘
+                           ┌────────────────────────┐
+                           │      ORCHESTRATOR      │ ◄── Root (Primary)
+                           └───────────┬────────────┘
+                                       │
+              ┌────────────────────────┼────────────────────────┐
+              │                        │                        │
+              ▼                        ▼                        ▼
+    ┌─────────────────┐      ┌─────────────────┐      ┌─────────────────┐
+    │   DEVELOPMENT   │      │     DATA/AI     │      │    OPERATIONS   │
+    └─────────────────┘      └─────────────────┘      └─────────────────┘
+              │                        │                        │
+      ┌───────┴───────┐        ┌───────┴───────┐        ┌───────┴───────┐
+      │               │        │               │        │               │
+      ▼               ▼        ▼               ▼        ▼               ▼
+  FRONTEND       BACKEND        AI          SECURITY    DEVOPS         RAPID
+ DEVELOPER      ARCHITECT     ENGINEER       AUDITOR    AUTOMATOR     PROTOTYPER
+                 MOBILE                                            SPRINT
+                 BUILDER                                          PRIORITIZER
+                                                                GROWTH HACKER
+                                                                CONTENT CREATOR
+                                       │
+                                       ▼
+                          ┌───────────────────────┐
+                          │      VALIDATION        │
+                          └───────────────────────┘
+                                       │
+                                       ▼
+                          ┌───────────────────────┐
+                          │     FINAL OUTPUT      │
+                          └───────────────────────┘
 ```
 
-### Compact View
+## Simple List View
 
 ```
-                                     ┌────────────────────────┐
-                                     │      ORCHESTRATOR      │ ◄── Primary (Root)
-                                     └───────────┬────────────┘
-                                                 │
-                     ┌────────────────────────────┼────────────────────────────┐
-                     │                            │                            │
-                     ▼                            ▼                            ▼
-           ┌─────────────────┐       ┌─────────────────┐       ┌─────────────────┐
-           │   DEVELOPMENT   │       │     DATA/AI     │       │   OPERATIONS    │
-           └─────────────────┘       └─────────────────┘       └─────────────────┘
-                     │                            │                            │
-         ┌───────────┼───────────┐       ┌─────────┼─────────┐       ┌───────────┼───────────┐
-         │           │           │       │         │         │       │           │           │
-         ▼           ▼           ▼       ▼         ▼         ▼       ▼           ▼           ▼
-   ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐
-   │  FRONTEND │ │  BACKEND  │ │  MOBILE   │ │    AI     │ │ SECURITY  │ │  DEVOPS   │ │   RAPID   │
-   │ DEVELOPER │ │ARCHITECT  │ │  BUILDER  │ │ ENGINEER  │ │ AUDITOR   │ │ AUTOMATOR │ │ PROTOTYPER│
-   └───────────┘ └───────────┘ └───────────┘ └───────────┘ └───────────┘ └───────────┘ └───────────┘
-         │           │           │               │               │               │               │
-         └───────────┴───────────┴───────┬───────┴───────────────┴───────────────┴───────────────┘
-                                         │
-                                         ▼
-                           ┌─────────────────────────────────┐
-                           │        ADDITIONAL LAYER         │
-                           │  ┌───────────┐ ┌───────────┐   │
-                           │  │  SPRINT   │ │  GROWTH   │   │
-                           │  │PRIORITIZER│ │  HACKER   │   │
-                           │  └───────────┘ └───────────┘   │
-                           │      ┌───────────────────┐     │
-                           │      │      CONTENT      │     │
-                           │      │     CREATOR       │     │
-                           │      └───────────────────┘     │
-                           └─────────────────────────────────┘
-                                         │
-                                         ▼
-                           ┌─────────────────────────────────┐
-                           │       VALIDATION LAYER          │
-                           │  • Review Output                │
-                           │  • Check Acceptance Criteria    │
-                           │  • Request Revisions if Needed  │
-                           └─────────────────────────────────┘
-                                         │
-                                         ▼
-                           ┌─────────────────────────────────┐
-                           │         FINAL OUTPUT             │
-                           └─────────────────────────────────┘
-```
+ORCHESTRATOR (Root)
+│
+├── @frontend-developer  ──► UI Components, React, Vue
+├── @backend-architect   ──► APIs, Databases, System Design
+├── @mobile-app-builder  ──► iOS, Android, React Native
+├── @ai-engineer         ──► ML, LLMs, Prompt Engineering
+├── @security-auditor    ──► Security, Vulnerability Assessment
+├── @devops-automator    ──► CI/CD, Infrastructure, Deployment
+├── @rapid-prototyper    ──► MVPs, Proof-of-Concepts
+├── @sprint-prioritizer  ──► Planning, Estimation, Sprints
+├── @growth-hacker       ──► Analytics, A/B Testing, Growth
+└── @content-creator     ──► Documentation, Marketing Copy
 ```
 
 ## Features
@@ -204,18 +164,18 @@ orchestrator-opencode --install
 
 ### Specialist Subagents
 
-| Agent | Expertise | Category |
-|-------|-----------|----------|
-| **@frontend-developer** | UI components, React, Vue, accessibility, styling | Development |
-| **@backend-architect** | APIs, databases, system design, server-side implementation | Development |
-| **@mobile-app-builder** | iOS, Android, React Native, Flutter | Development |
-| **@ai-engineer** | ML models, LLMs, prompt engineering, RAG | Data/AI |
-| **@security-auditor** | Security auditing, vulnerability assessment, secure coding | Data/AI |
-| **@devops-automator** | CI/CD, infrastructure, deployment, monitoring | Operations |
-| **@rapid-prototyper** | Quick MVPs, proof-of-concepts, demos | Operations |
-| **@sprint-prioritizer** | Backlog grooming, sprint planning, estimation | Operations |
-| **@growth-hacker** | Analytics, A/B testing, conversion optimization | Operations |
-| **@content-creator** | Documentation, marketing copy, technical writing | Documentation |
+| Agent | Expertise |
+|-------|-----------|
+| **@frontend-developer** | UI components, React, Vue, accessibility, styling |
+| **@backend-architect** | APIs, databases, system design, server-side implementation |
+| **@mobile-app-builder** | iOS, Android, React Native, Flutter |
+| **@ai-engineer** | ML models, LLMs, prompt engineering, RAG |
+| **@devops-automator** | CI/CD, infrastructure, deployment, monitoring |
+| **@rapid-prototyper** | Quick MVPs, proof-of-concepts, demos |
+| **@sprint-prioritizer** | Backlog grooming, sprint planning, estimation |
+| **@growth-hacker** | Analytics, A/B testing, conversion optimization |
+| **@security-auditor** | Security auditing, vulnerability assessment, secure coding |
+| **@content-creator** | Documentation, marketing copy, technical writing |
 
 ## Workflow
 
