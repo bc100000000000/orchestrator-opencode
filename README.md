@@ -25,12 +25,12 @@
                            v
 +======================================================================+
 |                        ORCHESTRATOR                                   |
-|  +--------------------------------------------------------------------+ |
-|  |  • Analyzes request                                                | |
-|  |  • Creates execution plan                                          | |
-|  |  • Delegates to specialists                                        | |
-|  |  • Validates results                                               | |
-|  +--------------------------------------------------------------------+ |
+|  +--------------------------------------------------------------------+ 
+|  |  • Analyzes request                                                | 
+|  |  • Creates execution plan                                          | 
+|  |  • Delegates to specialists                                        | 
+|  |  • Validates results                                               | 
+|  +--------------------------------------------------------------------+ 
 +--------------------------+-------------------------------------------+
                            |
                            v
@@ -43,7 +43,7 @@
          |                  |                   |
          v                  v                   v
 +-----------+         +-----------+         +-----------+
-| DEVELOPMENT|         |  DATA/AI  |         | OPERATIONS|
+|DEVELOPMENT|         |  DATA/AI  |         | OPERATIONS| 
 +-----------+         +-----------+         +-----------+
 | Frontend  |         |AI Engineer|         | DevOps    |
 | Backend   |         |Security   |         | Rapid     |
@@ -55,7 +55,7 @@
                            |
                            v
 +======================================================================+
-|                         VALIDATION                                    |
+|                         VALIDATION                                   |
 |       • Check acceptance criteria                                    |
 |       • Request revisions if needed                                  |
 |       • Ensure quality                                               |
@@ -63,8 +63,8 @@
                            |
                            v
 +======================================================================+
-|                        FINAL OUTPUT                                   |
-|             Complete, validated solution delivered                    |
+|                        FINAL OUTPUT                                  |
+|             Complete, validated solution delivered                   |
 +======================================================================+
 ```
 
