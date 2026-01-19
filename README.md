@@ -17,56 +17,55 @@
 ## How It Works
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                        USER REQUEST                             │
-│         "Build a todo app with React and Express API"           │
-└─────────────────────────┬───────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    🤖 ORCHESTRATOR                               │
-│    ┌─────────────────────────────────────────────────────────┐  │
-│    │ • Analyzes request                                      │  │
-│    • Creates execution plan                                   │
-│    • Delegates to specialists                                 │
-│    • Validates results                                        │
-│    └─────────────────────────────────────────────────────────┘  │
-└─────────────────────────┬───────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    🔧 TASK TOOL                                  │
-│           (Delegates to appropriate specialist agents)          │
-└─────────────────────────┬───────────────────────────────────────┘
-                          │
-        ┌─────────────────┼─────────────────┐
-        │                 │                 │
-        ▼                 ▼                 ▼
-┌───────────────┐  ┌───────────────┐  ┌───────────────┐
-│ 💻 DEVELOPMENT│  │ 🧠 DATA / AI  │  │ ⚙️ OPERATIONS │
-├───────────────┤  ├───────────────┤  ├───────────────┤
-│ • Frontend    │  │ • AI Engineer │  │ • DevOps      │
-│ • Backend     │  │ • Security    │  │ • Rapid Proto │
-│ • Mobile      │  │               │  │ • Sprint      │
-│               │  │               │  │ • Growth      │
-│               │  │               │  │               │
-└───────┬───────┘  └───────┬───────┘  └───────┬───────┘
-        │                  │                  │
-        └──────────────────┼──────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                      ✅ VALIDATION                               │
-│          • Check acceptance criteria                            │
-│          • Request revisions if needed                          │
-│          • Ensure quality                                       │
-└─────────────────────────┬───────────────────────────────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    📄 FINAL OUTPUT                               │
-│              Complete, validated solution delivered              │
-└─────────────────────────────────────────────────────────────────┘
++======================================================================+
+|                          USER REQUEST                                |
+|            "Build a todo app with React and Express API"             |
++--------------------------+-------------------------------------------+
+                           |
+                           v
++======================================================================+
+|                        ORCHESTRATOR                                   |
+|  +--------------------------------------------------------------------+ |
+|  |  • Analyzes request                                                | |
+|  |  • Creates execution plan                                          | |
+|  |  • Delegates to specialists                                        | |
+|  |  • Validates results                                               | |
+|  +--------------------------------------------------------------------+ |
++--------------------------+-------------------------------------------+
+                           |
+                           v
++======================================================================+
+|                         TASK TOOL                                     |
+|              (Delegates to appropriate specialist agents)             |
++--------------------------+-------------------------------------------+
+                           |
+         +------------------+-------------------+
+         |                  |                   |
+         v                  v                   v
++-----------+         +-----------+         +-----------+
+| DEVELOPMENT|         |  DATA/AI  |         | OPERATIONS|
++-----------+         +-----------+         +-----------+
+| Frontend  |         |AI Engineer|         | DevOps    |
+| Backend   |         |Security   |         | Rapid     |
+| Mobile    |         | Auditor   |         | Sprint    |
+|           |         |           |         | Growth    |
++-----------+         +-----------+         +-----------+
+         |                  |                   |
+         +------------------+-------------------+
+                           |
+                           v
++======================================================================+
+|                         VALIDATION                                    |
+|       • Check acceptance criteria                                    |
+|       • Request revisions if needed                                  |
+|       • Ensure quality                                               |
++--------------------------+-------------------------------------------+
+                           |
+                           v
++======================================================================+
+|                        FINAL OUTPUT                                   |
+|             Complete, validated solution delivered                    |
++======================================================================+
 ```
 
 ---
@@ -74,31 +73,31 @@
 ## Agent Categories
 
 ```
-                        ┌─────────────────────┐
-                        │   🤖 ORCHESTRATOR   │  ◄── Primary Agent
-                        │   (Root Coordinator)│     Plans & Delegates
-                        └──────────┬──────────┘
-                                   │
-          ┌────────────────────────┼────────────────────────┐
-          │                        │                        │
-          ▼                        ▼                        ▼
-┌─────────────────┐   ┌─────────────────┐   ┌─────────────────┐
-│ 💻 DEVELOPMENT  │   │ 🧠 DATA / AI   │   │ ⚙️ OPERATIONS   │
-├─────────────────┤   ├─────────────────┤   ├─────────────────┤
-│ @frontend-dev   │   │ @ai-engineer    │   │ @devops-auto    │
-│ @backend-arch   │   │ @security-audit │   │ @rapid-proto    │
-│ @mobile-builder │   │                 │   │ @sprint-prior   │
-│                 │   │                 │   │ @growth-hacker  │
-└─────────────────┘   └─────────────────┘   └─────────────────┘
-          │                        │                        │
-          │                        │                        │
-          └────────────────────────┼────────────────────────┘
-                                   │
-                                   ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                       📝 DOCUMENTATION                           │
-│                   @content-creator (Docs & Copy)                 │
-└─────────────────────────────────────────────────────────────────┘
+                              +---------------------+
+                              |    ORCHESTRATOR     |  <-- Primary Agent
+                              |  (Root Coordinator) |
+                              +----------+----------+
+                                         |
+                    +--------------------+--------------------+
+                    |                    |                    |
+                    v                    v                    v
+          +-----------------+  +-----------------+  +-----------------+
+          |   DEVELOPMENT   |  |    DATA / AI    |  |   OPERATIONS    |
+          +-----------------+  +-----------------+  +-----------------+
+          | @frontend-dev   |  | @ai-engineer    |  | @devops-auto    |
+          | @backend-arch   |  | @security-audit |  | @rapid-proto    |
+          | @mobile-builder |  |                 |  | @sprint-prior   |
+          |                 |  |                 |  | @growth-hacker  |
+          +-----------------+  +-----------------+  +-----------------+
+                    |                    |                    |
+                    |                    |                    |
+                    +--------------------+--------------------+
+                                         |
+                                         v
+                              +---------------------+
+                              |   DOCUMENTATION     |
+                              | @content-creator    |
+                              +---------------------+
 ```
 
 ---
@@ -107,16 +106,16 @@
 
 | # | Agent | Category | Specialty |
 |---|-------|----------|-----------|
-| 1 | @frontend-developer | 💻 Development | UI, React, Vue, Accessibility |
-| 2 | @backend-architect | 💻 Development | APIs, Databases, System Design |
-| 3 | @mobile-app-builder | 💻 Development | iOS, Android, React Native |
-| 4 | @ai-engineer | 🧠 Data / AI | ML, LLMs, Prompt Engineering |
-| 5 | @security-auditor | 🧠 Data / AI | Security, Vulnerability Assessment |
-| 6 | @devops-automator | ⚙️ Operations | CI/CD, Infrastructure, Deployment |
-| 7 | @rapid-prototyper | ⚙️ Operations | MVPs, Proof-of-Concepts |
-| 8 | @sprint-prioritizer | ⚙️ Operations | Planning, Estimation, Sprints |
-| 9 | @growth-hacker | ⚙️ Operations | Analytics, A/B Testing, Growth |
-| 10 | @content-creator | 📝 Documentation | Documentation, Marketing Copy |
+| 1 | @frontend-developer | DEVELOPMENT | UI, React, Vue, Accessibility |
+| 2 | @backend-architect | DEVELOPMENT | APIs, Databases, System Design |
+| 3 | @mobile-app-builder | DEVELOPMENT | iOS, Android, React Native |
+| 4 | @ai-engineer | DATA / AI | ML, LLMs, Prompt Engineering |
+| 5 | @security-auditor | DATA / AI | Security, Vulnerability Assessment |
+| 6 | @devops-automator | OPERATIONS | CI/CD, Infrastructure, Deployment |
+| 7 | @rapid-prototyper | OPERATIONS | Quick MVPs, Proof-of-Concepts |
+| 8 | @sprint-prioritizer | OPERATIONS | Planning, Estimation, Sprints |
+| 9 | @growth-hacker | OPERATIONS | Analytics, A/B Testing, Growth |
+| 10 | @content-creator | DOCUMENTATION | Documentation, Marketing Copy |
 
 ---
 
@@ -124,17 +123,17 @@
 
 ```
 ORCHESTRATOR (Primary Agent)
-│
-├── @frontend-developer   → UI Components, React, Vue
-├── @backend-architect    → APIs, Databases, System Design
-├── @mobile-app-builder   → iOS, Android, React Native
-├── @ai-engineer          → ML Models, LLMs, Prompt Engineering
-├── @security-auditor     → Security Auditing, Vulnerability Assessment
-├── @devops-automator     → CI/CD, Infrastructure, Deployment
-├── @rapid-prototyper     → Quick MVPs, Proof-of-Concepts
-├── @sprint-prioritizer   → Backlog, Planning, Estimation
-├── @growth-hacker        → Analytics, A/B Testing, Growth
-└── @content-creator      → Documentation, Marketing Copy
+|
++-- @frontend-developer   -> UI Components, React, Vue
++-- @backend-architect    -> APIs, Databases, System Design
++-- @mobile-app-builder   -> iOS, Android, React Native
++-- @ai-engineer          -> ML Models, LLMs, Prompt Engineering
++-- @security-auditor     -> Security Auditing, Vulnerability Assessment
++-- @devops-automator     -> CI/CD, Infrastructure, Deployment
++-- @rapid-prototyper     -> Quick MVPs, Proof-of-Concepts
++-- @sprint-prioritizer   -> Backlog, Planning, Estimation
++-- @growth-hacker        -> Analytics, A/B Testing, Growth
++-- @content-creator      -> Documentation, Marketing Copy
 ```
 
 ---
@@ -145,13 +144,13 @@ ORCHESTRATOR (Primary Agent)
 ```
 [CONSULT] @backend-architect: What auth strategy for REST API?
 ```
-→ Specialist provides expert advice WITHOUT making changes
+Specialist provides expert advice WITHOUT making changes.
 
 ### DELEGATE Mode (Get Implementation)
 ```
 [DELEGATE] @backend-architect: Implement JWT authentication
 ```
-→ Specialist implements the task WITH file changes
+Specialist implements the task WITH file changes.
 
 ---
 
@@ -181,8 +180,8 @@ cp -r .opencode/agents ~/.config/opencode/
 
 # Use in OpenCode
 opencode
-# Press Tab → Switch to Orchestrator
-# Give a task → "Build a REST API for user auth"
+# Press Tab -> Switch to Orchestrator
+# Give a task -> "Build a REST API for user auth"
 ```
 
 ---
@@ -208,25 +207,25 @@ Result: Complete todo app! ✅
 
 ```
 orchestrator-opencode/
-├── .opencode/
-│   ├── agents/
-│   │   ├── orchestrator.md        # Primary agent
-│   │   ├── frontend-developer.md  # Subagent
-│   │   ├── backend-architect.md   # Subagent
-│   │   ├── mobile-app-builder.md  # Subagent
-│   │   ├── ai-engineer.md         # Subagent
-│   │   ├── devops-automator.md    # Subagent
-│   │   ├── rapid-prototyper.md    # Subagent
-│   │   ├── sprint-prioritizer.md  # Subagent
-│   │   ├── growth-hacker.md       # Subagent
-│   │   ├── security-auditor.md    # Subagent
-│   │   └── content-creator.md     # Subagent
-│   └── plugins/
-│       └── orchestrator.ts        # Validator plugin
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-└── package.json
++-- .opencode/
+|   +-- agents/
+|   |   +-- orchestrator.md         # Primary agent
+|   |   +-- frontend-developer.md   # Subagent
+|   |   +-- backend-architect.md    # Subagent
+|   |   +-- mobile-app-builder.md   # Subagent
+|   |   +-- ai-engineer.md          # Subagent
+|   |   +-- devops-automator.md     # Subagent
+|   |   +-- rapid-prototyper.md     # Subagent
+|   |   +-- sprint-prioritizer.md   # Subagent
+|   |   +-- growth-hacker.md        # Subagent
+|   |   +-- security-auditor.md     # Subagent
+|   |   +-- content-creator.md      # Subagent
+|   +-- plugins/
+|       +-- orchestrator.ts         # Validator plugin
++-- README.md
++-- LICENSE
++-- CONTRIBUTING.md
++-- package.json
 ```
 
 ---
