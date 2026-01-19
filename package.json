@@ -1,23 +1,25 @@
 {
-  "name": "@username/orchestrator-opencode",
+  "name": "@bc100000000000/orchestrator-opencode",
   "version": "1.0.0",
-  "description": "Multi-agent orchestration system for OpenCode",
+  "description": "Multi-agent orchestration system for OpenCode with 11 specialized AI agents",
   "main": ".opencode/agents/orchestrator.md",
   "keywords": [
     "opencode",
     "agent",
     "orchestration",
     "ai",
-    "multi-agent"
+    "multi-agent",
+    "specialist-agents",
+    "developer-tools"
   ],
-  "author": "Your Name",
+  "author": "bc100000000000",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/orchestrator-opencode.git"
+    "url": "https://github.com/bc100000000000/orchestrator-opencode.git"
   },
   "bugs": {
-    "url": "https://github.com/username/orchestrator-opencode/issues"
+    "url": "https://github.com/bc100000000000/orchestrator-opencode/issues"
   },
-  "homepage": "https://github.com/username/orchestrator-opencode#readme"
+  "homepage": "https://github.com/bc100000000000/orchestrator-opencode#readme"
 }
