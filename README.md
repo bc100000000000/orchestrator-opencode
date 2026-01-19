@@ -21,104 +21,81 @@ A comprehensive multi-agent orchestration system for [OpenCode](https://opencode
                                     │  └───────────────────┘  │
                                     └───────────┬─────────────┘
                                                 │
-                              ┌─────────────────┼─────────────────┐
-                              │                 │                 │
-                              ▼                 ▼                 ▼
-            ┌─────────────────┴─────────────────┴─────────────────┐
-            │                                                         │
-            ▼              TASK TOOL DELEGATION (1-to-many)          ▼
-            │                                                         │
-   ┌────────┴────────┐                            ┌─────────────────┴─────────────────┐
-   │                 │                            │                                   │
-   ▼                 ▼                            ▼                                   ▼
-┌──────┐        ┌──────┐                   ┌─────────────┐                   ┌─────────────┐
-│ CONSULT │      │CONSULT│                   │  CONSULT    │                   │  CONSULT    │
-│ Agent A │      │ Agent B│                   │   Agent C   │                   │   Agent D   │
-└─────────┘      └────────┘                   └─────────────┘                   └─────────────┘
-(Advice Only)   (Advice Only)                     │                                   │
-                                                  │                                   │
-                                                  ▼                                   ▼
-                                           ┌─────────────┐                   ┌─────────────┐
-                                           │  DELEGATE   │                   │  DELEGATE   │
-                                           │   Agent E   │                   │   Agent F   │
-                                           └─────────────┘                   └─────────────┘
-                                          (Implements)                       (Implements)
-                                                  │                                   │
-                                                  └─────────────┬─────────────────────┘
-                                                                │
-                                                                ▼
-                                               ┌────────────────────────────────────┐
-                                               │      ORCHESTRATOR VALIDATES        │
-                                               │   • Checks acceptance criteria     │
-                                               │   • Requests revisions if needed   │
-                                               └────────────────────────────────────┘
-                                                                │
-                                                                ▼
-                                               ┌────────────────────────────────────┐
-                                               │      FINAL DELIVERABLE(S)          │
-                                               │      Aggregated Output to User     │
-                                               └────────────────────────────────────┘
+                                ┌───────────────┼───────────────┐
+                                │               │               │
+                                ▼               ▼               ▼
+                    ┌─────────────────┬─────────┴─────────┬─────────────────┐
+                    │                                                     │
+                    ▼              TASK TOOL DELEGATION (1-to-many)         ▼
+                    │                                                     │
+           ┌────────┴────────┐                            ┌─────────────────┴─────────────────┐
+           │                 │                            │                                   │
+           ▼                 ▼                            ▼                                   ▼
+        ┌──────┐        ┌──────┐                   ┌─────────────┐                   ┌─────────────┐
+        │ CONSULT │      │CONSULT│                   │  CONSULT    │                   │  CONSULT    │
+        │ Agent A │      │ Agent B│                   │   Agent C   │                   │   Agent D   │
+        └─────────┘      └────────┘                   └─────────────┘                   └─────────────┘
+       (Advice Only)   (Advice Only)                        │                                   │
+                                                             │                                   │
+                                                             ▼                                   ▼
+                                                      ┌─────────────┐                   ┌─────────────┐
+                                                      │  DELEGATE   │                   │  DELEGATE   │
+                                                      │   Agent E   │                   │   Agent F   │
+                                                      └─────────────┘                   └─────────────┘
+                                                     (Implements)                       (Implements)
+                                                             │                                   │
+                                                             └─────────────┬─────────────────────┘
+                                                                           │
+                                                                           ▼
+                                                        ┌────────────────────────────────────┐
+                                                        │      ORCHESTRATOR VALIDATES        │
+                                                        │   • Checks acceptance criteria     │
+                                                        │   • Requests revisions if needed   │
+                                                        └────────────────────────────────────┘
+                                                                           │
+                                                                           ▼
+                                                        ┌────────────────────────────────────┐
+                                                        │      FINAL DELIVERABLE(S)          │
+                                                        │      Aggregated Output to User     │
+                                                        └────────────────────────────────────┘
 ```
 
-### Tree View (Merkle-Style)
+### Agent Tree (Merkle-Style)
 
 ```
-                           ┌─────────────────────────────┐
-                           │        ORCHESTRATOR          │ ◄── Primary Agent
-                           │       (Root Coordinator)     │     Plans & Delegates
-                           └─────────────────────────────┘
-                                        │
-                    ┌───────────────────┼───────────────────┐
-                    │                   │                   │
-                    ▼                   ▼                   ▼
-         ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-         │  FRONTEND    │    │   BACKEND    │    │    MOBILE    │
-         │  DEVELOPER   │    │  ARCHITECT   │    │   BUILDER    │
-         └──────────────┘    └──────────────┘    └──────────────┘
-              │                   │                   │
-         ┌────┴────┐         ┌────┴────┐         ┌────┴────┐
-         │         │         │         │         │         │
-         ▼         ▼         ▼         ▼         ▼         ▼
-    ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐
-    │ CONSULT│ │DELEGATE│ │ CONSULT│ │DELEGATE│ │ CONSULT│ │DELEGATE│
-    │(advice)│ │(build) │ │(advice)│ │(build) │ │(advice)│ │(build) │
-    └────────┘ └────────┘ └────────┘ └────────┘ └────────┘ └────────┘
-
-                     ┌───────────────────────────────────────┐
-                     │           SUBAGENTS LAYER             │
-                     │  ┌─────────────────────────────────┐  │
-                     │  │ • frontend-developer (UI)       │  │
-                     │  │ • backend-architect (API/DB)    │  │
-                     │  │ • mobile-app-builder (iOS/Android)│ │
-                     │  │ • ai-engineer (ML/AI)           │  │
-                     │  │ • devops-automator (CI/CD)      │  │
-                     │  │ • rapid-prototyper (MVPs)       │  │
-                     │  │ • sprint-prioritizer (Planning) │  │
-                     │  │ • growth-hacker (Analytics)     │  │
-                     │  │ • security-auditor (Security)   │  │
-                     │  │ • content-creator (Docs/Copy)   │  │
-                     │  └─────────────────────────────────┘  │
-                     └───────────────────────────────────────┘
-```
-
-### Agent Hierarchy
-
-```
-ORCHESTRATOR (Primary)
-│
-├── @frontend-developer ────────► UI Components, Styling, Accessibility
-├── @backend-architect ─────────► APIs, Databases, System Design  
-├── @mobile-app-builder ────────► iOS, Android, Cross-Platform
-├── @ai-engineer ───────────────► ML, LLMs, Prompt Engineering
-├── @devops-automator ──────────► CI/CD, Infrastructure, Deployment
-├── @rapid-prototyper ──────────► MVPs, Proof-of-Concepts
-├── @sprint-prioritizer ────────► Planning, Estimation, Sprints
-├── @growth-hacker ─────────────► Analytics, A/B Testing, Growth
-├── @security-auditor ──────────► Security Auditing, Vulnerability Assessment
-└── @content-creator ───────────► Documentation, Marketing Copy
-
-Legend:
-├──► = Can delegate to (Task tool)
+                                    ┌─────────────────────────────┐
+                                    │        ORCHESTRATOR          │ ◄── Primary Agent
+                                    │       (Root Coordinator)     │     Plans & Delegates
+                                    └─────────────────────────────┘
+                                                 │
+         ┌────┬────┬────┬────┬────┬────┬─────┬─────┬────┬────┐
+         │    │    │    │    │    │    │     │     │    │    │
+         ▼    ▼    ▼    ▼    ▼    ▼    ▼     ▼     ▼    ▼    ▼
+   ┌────────┐┌────────┐┌────────┐┌────────┐┌────────┐┌────────┐┌────────┐┌────────┐┌────────┐┌────────┐
+   │FRONTEND││ BACKEND││ MOBILE ││   AI   ││ DEVOPS ││  RAPID ││SECURITY││ SPRINT ││  GROWTH││ CONTENT│
+   │ DEVELOP││ARCHITEC││ BUILDER││ENGINEER││AUTOMAT.││PROTOTYP││ AUDITOR││PRIORIT.││  HACKER││ CREATOR│
+   └────────┘└────────┘└────────┘└────────┘└────────┘└────────┘└────────┘└────────┘└────────┘└────────┘
+       │        │        │        │        │        │        │        │        │        │
+       ▼        ▼        ▼        ▼        ▼        ▼        ▼        ▼        ▼        ▼
+   ┌────────┐┌────────┐┌────────┐┌────────┐┌────────┐┌────────┐┌────────┐┌────────┐┌────────┐┌────────┐
+   │CONSULT ││ CONSULT││ CONSULT││ CONSULT││ CONSULT││ CONSULT││ CONSULT││ CONSULT││ CONSULT││ CONSULT│
+   │DELEGATE││DELEGATE││DELEGATE││DELEGATE││DELEGATE││DELEGATE││DELEGATE││DELEGATE││DELEGATE││DELEGATE│
+   └────────┘└────────┘└────────┘└────────┘└────────┘└────────┘└────────┘└────────┘└────────┘└────────┘
+                                          │
+                                          │ (All specialists can CONSULT or DELEGATE)
+                                          │
+                                          ▼
+                               ┌─────────────────────────────┐
+                               │      VALIDATION LAYER       │
+                               │  • Checks acceptance        │
+                               │  • Requests revisions       │
+                               │  • Aggregates results       │
+                               └─────────────────────────────┘
+                                          │
+                                          ▼
+                               ┌─────────────────────────────┐
+                               │      FINAL OUTPUT           │
+                               └─────────────────────────────┘
 ```
 
 ## Features
@@ -254,6 +231,11 @@ Specialist **implements** the requested task:
 > Design a CI/CD pipeline for my Node.js project with monitoring
 ```
 
+### Security Audit
+```
+> @security-auditor Audit this codebase for vulnerabilities
+```
+
 ## Architecture
 
 ```
@@ -262,7 +244,14 @@ Specialist **implements** the requested task:
 │   ├── orchestrator.md           # Primary coordinator agent
 │   ├── frontend-developer.md     # Subagent
 │   ├── backend-architect.md      # Subagent
-│   └── ... (8 more)
+│   ├── mobile-app-builder.md     # Subagent
+│   ├── ai-engineer.md            # Subagent
+│   ├── devops-automator.md       # Subagent
+│   ├── rapid-prototyper.md       # Subagent
+│   ├── sprint-prioritizer.md     # Subagent
+│   ├── growth-hacker.md          # Subagent
+│   ├── security-auditor.md       # Subagent
+│   └── content-creator.md        # Subagent
 └── plugins/
     └── orchestrator.ts           # Fallback validator plugin
 ```
