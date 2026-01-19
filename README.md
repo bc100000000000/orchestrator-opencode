@@ -84,20 +84,21 @@ A comprehensive multi-agent orchestration system for [OpenCode](https://opencode
     │(advice)│ │(build) │ │(advice)│ │(build) │ │(advice)│ │(build) │
     └────────┘ └────────┘ └────────┘ └────────┘ └────────┘ └────────┘
 
-                    ┌───────────────────────────────────────┐
-                    │           SUBAGENTS LAYER             │
-                    │  ┌─────────────────────────────────┐  │
-                    │  │ • frontend-developer (UI)       │  │
-                    │  │ • backend-architect (API/DB)    │  │
-                    │  │ • mobile-app-builder (iOS/Android)│ │
-                    │  │ • ai-engineer (ML/AI)           │  │
-                    │  │ • devops-automator (CI/CD)      │  │
-                    │  │ • rapid-prototyper (MVPs)       │  │
-                    │  │ • sprint-prioritizer (Planning) │  │
-                    │  │ • growth-hacker (Analytics)     │  │
-                    │  │ • content-creator (Docs/Copy)   │  │
-                    │  └─────────────────────────────────┘  │
-                    └───────────────────────────────────────┘
+                     ┌───────────────────────────────────────┐
+                     │           SUBAGENTS LAYER             │
+                     │  ┌─────────────────────────────────┐  │
+                     │  │ • frontend-developer (UI)       │  │
+                     │  │ • backend-architect (API/DB)    │  │
+                     │  │ • mobile-app-builder (iOS/Android)│ │
+                     │  │ • ai-engineer (ML/AI)           │  │
+                     │  │ • devops-automator (CI/CD)      │  │
+                     │  │ • rapid-prototyper (MVPs)       │  │
+                     │  │ • sprint-prioritizer (Planning) │  │
+                     │  │ • growth-hacker (Analytics)     │  │
+                     │  │ • security-auditor (Security)   │  │
+                     │  │ • content-creator (Docs/Copy)   │  │
+                     │  └─────────────────────────────────┘  │
+                     └───────────────────────────────────────┘
 ```
 
 ### Agent Hierarchy
@@ -113,6 +114,7 @@ ORCHESTRATOR (Primary)
 ├── @rapid-prototyper ──────────► MVPs, Proof-of-Concepts
 ├── @sprint-prioritizer ────────► Planning, Estimation, Sprints
 ├── @growth-hacker ─────────────► Analytics, A/B Testing, Growth
+├── @security-auditor ──────────► Security Auditing, Vulnerability Assessment
 └── @content-creator ───────────► Documentation, Marketing Copy
 
 Legend:
@@ -121,7 +123,7 @@ Legend:
 
 ## Features
 
-- 🤖 **10 Specialized Agents** - Frontend, backend, mobile, AI, DevOps, and more
+- 🤖 **11 Specialized Agents** - Frontend, backend, mobile, AI, DevOps, security, and more
 - 📋 **Consult vs Delegate Workflow** - Get advice or get implementations
 - 🎯 **User-in-the-Loop** - Approval gates at decision points and destructive actions
 - 🔐 **Granular Permissions** - Specialists ask before editing or running commands
@@ -181,13 +183,14 @@ orchestrator-opencode --install
 | Agent | Expertise |
 |-------|-----------|
 | **@frontend-developer** | UI components, React, Vue, accessibility, styling |
-| **@backend-architect** | APIs, databases, system design, security |
+| **@backend-architect** | APIs, databases, system design, server-side implementation |
 | **@mobile-app-builder** | iOS, Android, React Native, Flutter |
 | **@ai-engineer** | ML models, LLMs, prompt engineering, RAG |
 | **@devops-automator** | CI/CD, infrastructure, deployment, monitoring |
 | **@rapid-prototyper** | Quick MVPs, proof-of-concepts, demos |
 | **@sprint-prioritizer** | Backlog grooming, sprint planning, estimation |
 | **@growth-hacker** | Analytics, A/B testing, conversion optimization |
+| **@security-auditor** | Security auditing, vulnerability assessment, secure coding |
 | **@content-creator** | Documentation, marketing copy, technical writing |
 
 ## Workflow
