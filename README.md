@@ -81,15 +81,16 @@
                      +--------------------+--------------------+
                      |                    |                    |
                      v                    v                    v
-            +-----------------+  +-----------------+  +-----------------+
-            |   DEVELOPMENT   |  |    DATA / AI    |  |   OPERATIONS    |
-            +-----------------+  +-----------------+  +-----------------+
-            | @frontend-dev   |  | @ai-engineer    |  | @devops-auto    |
-            | @backend-arch   |  | @security-audit |  | @rapid-proto    |
-            | @mobile-builder |  | @ordinals-runes |  | @sprint-prior   |
-            |                 |  |                 |  | @growth-hacker  |
-            |                 |  |                 |  | @x-growth-op    |
-            +-----------------+  +-----------------+  +-----------------+
+             +-----------------+  +-----------------+  +-----------------+
+             |   DEVELOPMENT   |  |    DATA / AI    |  |   OPERATIONS    |
+             +-----------------+  +-----------------+  +-----------------+
+             | @frontend-dev   |  | @ai-engineer    |  | @devops-auto    |
+             | @backend-arch   |  | @security-audit |  | @rapid-proto    |
+             | @mobile-builder |  | @ordinals-runes |  | @sprint-prior   |
+             |                 |  |                 |  | @growth-hacker  |
+             |                 |  |                 |  | @x-growth-op    |
+             |                 |  |                 |  | @x-trend-obs    |
+             +-----------------+  +-----------------+  +-----------------+
                      |                    |                    |
                      |                    |                    |
                      +--------------------+--------------------+
@@ -103,7 +104,7 @@
 
 ---
 
-## All 11 Specialist Agents
+## All 13 Specialist Agents
 
 | # | Agent | Category | Specialty |
 |---|-------|----------|-----------|
@@ -118,7 +119,8 @@
 | 9 | @sprint-prioritizer | OPERATIONS | Planning, Estimation, Sprints |
 | 10 | @growth-hacker | OPERATIONS | Analytics, A/B Testing, Growth |
 | 11 | @x-growth-operator | OPERATIONS | X/Twitter Distribution, Growth |
-| 12 | @content-creator | DOCUMENTATION | Documentation, Marketing Copy |
+| 12 | @x-trend-observer | OPERATIONS | X/Twitter Trend Monitoring, Intelligence |
+| 13 | @content-creator | DOCUMENTATION | Documentation, Marketing Copy |
 
 ---
 
@@ -138,6 +140,7 @@ ORCHESTRATOR (Primary Agent)
 +-- @sprint-prioritizer   -> Backlog, Planning, Estimation
 +-- @growth-hacker        -> Analytics, A/B Testing, Growth
 +-- @x-growth-operator    -> X/Twitter Distribution, Growth
++-- @x-trend-observer     -> X/Twitter Trend Monitoring, Intelligence
 +-- @content-creator      -> Documentation, Marketing Copy
 ```
 
@@ -163,7 +166,7 @@ Specialist implements the task WITH file changes.
 
 <div align="center">
 
-| 🤖 | **12 Specialized Agents** |
+| 🤖 | **13 Specialized Agents** |
 |:---:|:---|
 | 📋 | **Consult vs Delegate** - Get advice or implementation |
 | 🎯 | **User-in-the-Loop** - Approval at decision points |
@@ -224,6 +227,7 @@ orchestrator-opencode/
 |   |   +-- sprint-prioritizer.md   # Subagent
 |   |   +-- growth-hacker.md        # Subagent
 |   |   +-- x-growth-operator.md    # Subagent
+|   |   +-- x-trend-observer.md     # Subagent
 |   |   +-- security-auditor.md     # Subagent
 |   |   +-- content-creator.md      # Subagent
 |   +-- plugins/
