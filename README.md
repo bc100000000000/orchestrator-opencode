@@ -102,7 +102,7 @@
 
 ---
 
-## All 10 Specialist Agents
+## All 11 Specialist Agents
 
 | # | Agent | Category | Specialty |
 |---|-------|----------|-----------|
@@ -161,7 +161,7 @@ Specialist implements the task WITH file changes.
 <div align="center">
 
 <<<<<<< HEAD
-| 🤖 | **10 Specialized Agents** |
+| 🤖 | **11 Specialized Agents** |
 =======
 | 🤖 | **12 Specialized Agents** |
 >>>>>>> eca78d4 (Add @ordinals-runes agent - Bitcoin ordinals and runes protocol expert)
