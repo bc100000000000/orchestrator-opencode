@@ -81,14 +81,14 @@
                     +--------------------+--------------------+
                     |                    |                    |
                     v                    v                    v
-          +-----------------+  +-----------------+  +-----------------+
-          |   DEVELOPMENT   |  |    DATA / AI    |  |   OPERATIONS    |
-          +-----------------+  +-----------------+  +-----------------+
-          | @frontend-dev   |  | @ai-engineer    |  | @devops-auto    |
-          | @backend-arch   |  | @security-audit |  | @rapid-proto    |
-          | @mobile-builder |  |                 |  | @sprint-prior   |
-          |                 |  |                 |  | @growth-hacker  |
-          +-----------------+  +-----------------+  +-----------------+
+           +-----------------+  +-----------------+  +-----------------+
+           |   DEVELOPMENT   |  |    DATA / AI    |  |   OPERATIONS    |
+           +-----------------+  +-----------------+  +-----------------+
+           | @frontend-dev   |  | @ai-engineer    |  | @devops-auto    |
+           | @backend-arch   |  | @security-audit |  | @rapid-proto    |
+           | @mobile-builder |  | @ordinals-runes |  | @sprint-prior   |
+           |                 |  |                 |  | @growth-hacker  |
+           +-----------------+  +-----------------+  +-----------------+
                     |                    |                    |
                     |                    |                    |
                     +--------------------+--------------------+
@@ -111,11 +111,12 @@
 | 3 | @mobile-app-builder | DEVELOPMENT | iOS, Android, React Native |
 | 4 | @ai-engineer | DATA / AI | ML, LLMs, Prompt Engineering |
 | 5 | @security-auditor | DATA / AI | Security, Vulnerability Assessment |
-| 6 | @devops-automator | OPERATIONS | CI/CD, Infrastructure, Deployment |
-| 7 | @rapid-prototyper | OPERATIONS | Quick MVPs, Proof-of-Concepts |
-| 8 | @sprint-prioritizer | OPERATIONS | Planning, Estimation, Sprints |
-| 9 | @growth-hacker | OPERATIONS | Analytics, A/B Testing, Growth |
-| 10 | @content-creator | DOCUMENTATION | Documentation, Marketing Copy |
+| 6 | @ordinals-runes | DATA / AI | Bitcoin Ordinals, Runes Protocol |
+| 7 | @devops-automator | OPERATIONS | CI/CD, Infrastructure, Deployment |
+| 8 | @rapid-prototyper | OPERATIONS | Quick MVPs, Proof-of-Concepts |
+| 9 | @sprint-prioritizer | OPERATIONS | Planning, Estimation, Sprints |
+| 10 | @growth-hacker | OPERATIONS | Analytics, A/B Testing, Growth |
+| 11 | @content-creator | DOCUMENTATION | Documentation, Marketing Copy |
 
 ---
 
@@ -129,6 +130,7 @@ ORCHESTRATOR (Primary Agent)
 +-- @mobile-app-builder   -> iOS, Android, React Native
 +-- @ai-engineer          -> ML Models, LLMs, Prompt Engineering
 +-- @security-auditor     -> Security Auditing, Vulnerability Assessment
++-- @ordinals-runes       -> Bitcoin Ordinals, Inscriptions, Runes Protocol
 +-- @devops-automator     -> CI/CD, Infrastructure, Deployment
 +-- @rapid-prototyper     -> Quick MVPs, Proof-of-Concepts
 +-- @sprint-prioritizer   -> Backlog, Planning, Estimation
@@ -158,7 +160,11 @@ Specialist implements the task WITH file changes.
 
 <div align="center">
 
+<<<<<<< HEAD
 | 🤖 | **10 Specialized Agents** |
+=======
+| 🤖 | **12 Specialized Agents** |
+>>>>>>> eca78d4 (Add @ordinals-runes agent - Bitcoin ordinals and runes protocol expert)
 |:---:|:---|
 | 📋 | **Consult vs Delegate** - Get advice or implementation |
 | 🎯 | **User-in-the-Loop** - Approval at decision points |
