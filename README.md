@@ -163,7 +163,7 @@ Specialist implements the task WITH file changes.
 
 <div align="center">
 
-| 🤖 | **13 Specialized Agents** |
+| 🤖 | **12 Specialized Agents** |
 |:---:|:---|
 | 📋 | **Consult vs Delegate** - Get advice or implementation |
 | 🎯 | **User-in-the-Loop** - Approval at decision points |
