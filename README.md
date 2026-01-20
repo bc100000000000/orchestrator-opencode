@@ -73,31 +73,32 @@
 ## Agent Categories
 
 ```
-                              +---------------------+
-                              |    ORCHESTRATOR     |  <-- Primary Agent
-                              |  (Root Coordinator) |
-                              +----------+----------+
-                                         |
-                    +--------------------+--------------------+
-                    |                    |                    |
-                    v                    v                    v
-           +-----------------+  +-----------------+  +-----------------+
-           |   DEVELOPMENT   |  |    DATA / AI    |  |   OPERATIONS    |
-           +-----------------+  +-----------------+  +-----------------+
-           | @frontend-dev   |  | @ai-engineer    |  | @devops-auto    |
-           | @backend-arch   |  | @security-audit |  | @rapid-proto    |
-           | @mobile-builder |  | @ordinals-runes |  | @sprint-prior   |
-           |                 |  |                 |  | @growth-hacker  |
-           +-----------------+  +-----------------+  +-----------------+
-                    |                    |                    |
-                    |                    |                    |
-                    +--------------------+--------------------+
-                                         |
-                                         v
-                              +---------------------+
-                              |   DOCUMENTATION     |
-                              | @content-creator    |
-                              +---------------------+
+                               +---------------------+
+                               |    ORCHESTRATOR     |  <-- Primary Agent
+                               |  (Root Coordinator) |
+                               +----------+----------+
+                                          |
+                     +--------------------+--------------------+
+                     |                    |                    |
+                     v                    v                    v
+            +-----------------+  +-----------------+  +-----------------+
+            |   DEVELOPMENT   |  |    DATA / AI    |  |   OPERATIONS    |
+            +-----------------+  +-----------------+  +-----------------+
+            | @frontend-dev   |  | @ai-engineer    |  | @devops-auto    |
+            | @backend-arch   |  | @security-audit |  | @rapid-proto    |
+            | @mobile-builder |  | @ordinals-runes |  | @sprint-prior   |
+            |                 |  |                 |  | @growth-hacker  |
+            |                 |  |                 |  | @x-growth-op    |
+            +-----------------+  +-----------------+  +-----------------+
+                     |                    |                    |
+                     |                    |                    |
+                     +--------------------+--------------------+
+                                          |
+                                          v
+                               +---------------------+
+                               |   DOCUMENTATION     |
+                               | @content-creator    |
+                               +---------------------+
 ```
 
 ---
@@ -116,7 +117,8 @@
 | 8 | @rapid-prototyper | OPERATIONS | Quick MVPs, Proof-of-Concepts |
 | 9 | @sprint-prioritizer | OPERATIONS | Planning, Estimation, Sprints |
 | 10 | @growth-hacker | OPERATIONS | Analytics, A/B Testing, Growth |
-| 11 | @content-creator | DOCUMENTATION | Documentation, Marketing Copy |
+| 11 | @x-growth-operator | OPERATIONS | X/Twitter Distribution, Growth |
+| 12 | @content-creator | DOCUMENTATION | Documentation, Marketing Copy |
 
 ---
 
@@ -135,6 +137,7 @@ ORCHESTRATOR (Primary Agent)
 +-- @rapid-prototyper     -> Quick MVPs, Proof-of-Concepts
 +-- @sprint-prioritizer   -> Backlog, Planning, Estimation
 +-- @growth-hacker        -> Analytics, A/B Testing, Growth
++-- @x-growth-operator    -> X/Twitter Distribution, Growth
 +-- @content-creator      -> Documentation, Marketing Copy
 ```
 
@@ -160,11 +163,7 @@ Specialist implements the task WITH file changes.
 
 <div align="center">
 
-<<<<<<< HEAD
-| 🤖 | **11 Specialized Agents** |
-=======
-| 🤖 | **12 Specialized Agents** |
->>>>>>> eca78d4 (Add @ordinals-runes agent - Bitcoin ordinals and runes protocol expert)
+| 🤖 | **13 Specialized Agents** |
 |:---:|:---|
 | 📋 | **Consult vs Delegate** - Get advice or implementation |
 | 🎯 | **User-in-the-Loop** - Approval at decision points |
@@ -224,6 +223,7 @@ orchestrator-opencode/
 |   |   +-- rapid-prototyper.md     # Subagent
 |   |   +-- sprint-prioritizer.md   # Subagent
 |   |   +-- growth-hacker.md        # Subagent
+|   |   +-- x-growth-operator.md    # Subagent
 |   |   +-- security-auditor.md     # Subagent
 |   |   +-- content-creator.md      # Subagent
 |   +-- plugins/
