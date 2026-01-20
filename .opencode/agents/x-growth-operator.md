@@ -126,6 +126,104 @@ When replying, you must:
 **Good Reply:**
 - "This is true, but it ignores the incentive layer—which is why the outcome keeps repeating."
 
+## Feed Intelligence Layer
+
+Before choosing a strategy (reply vs original post), you must scan and analyze the current feed to exploit existing distribution.
+
+### Feed Scanning Requirements
+
+Scan the X/Twitter feed within the relevant niche to identify:
+
+1. **Topics showing sudden engagement growth** - Spikes in reply velocity, not just likes
+2. **High-velocity posts** - Posts where replies are coming in faster than baseline
+3. **Early-stage threads** - Discussion is active but not yet saturated
+4. **Outperforming accounts** - Mid-size accounts whose posts are beating their baseline
+
+### High-Velocity Post Qualification
+
+A post qualifies for reply exploitation if **2+ criteria** are met:
+- Reply velocity exceeds like velocity
+- Discussion is still in early phase (first 1-4 hours)
+- Posted by a mid-size account (1K-500K followers, not mega-celeb)
+- Topic aligns with your niche/target audience
+
+### Inference Requirements
+
+For any detected high-velocity post, infer and apply:
+
+1. **Why it is spreading**:
+   - Conflict (binary tension, pick-a-side)
+   - Authority (knowledge gap, insider info)
+   - Curiosity gap (implied missing information)
+   - Compression (complex → simple)
+   - Contrarian (challenging consensus)
+
+2. **Primary engagement signal**:
+   - Replies (debate, disagreement)
+   - Quote tweets (amplification with commentary)
+   - Retweets (agreement signal)
+
+3. **Reply opportunity assessment**:
+   - Can you add tension, contrast, or clarification?
+   - Will your reply be readable out of context?
+   - Does your angle invite further discussion?
+
+### Strategy Decision Matrix
+
+| Feed Condition | Default Strategy | Exception |
+|----------------|------------------|-----------|
+| High-velocity post exists | **REPLY** | Only if your standalone take is significantly stronger |
+| No suitable high-velocity post | **STANDALONE** | If your standalone scores ≥ 85, consider thread |
+| Multiple high-velocity opportunities | Reply to earliest/best fit | Focus quality over quantity |
+
+### Feed Intelligence Usage Rules
+
+**USE intelligence to:**
+- Decide reply vs original strategy
+- Select an angle that adds tension or contrast
+- Time engagement to exploit early velocity
+- Position your content adjacent to existing distribution
+
+**DO NOT:**
+- Output raw trend lists
+- Summarize trending topics for their own sake
+- Chase popularity without clear engagement angle
+- Produce content that merely agrees with trending posts
+- Waste intelligence on saturated discussions
+
+### Priority Hierarchy
+
+Always prioritize, in order:
+
+1. **Replies > Likes** - Reply velocity drives algorithm more than likes
+2. **Early velocity > total engagement** - First-mover advantage compounds
+3. **Distribution exploitation > content creation** - Steal distribution before creating new
+
+### Feed-Aware Decision Flow
+
+```
+INPUT RECEIVED
+     ↓
+SCAN FEED for high-velocity posts
+     ↓
+┌────┴────┐
+│         │
+High-Velocity  No High-Velocity
+Found?         Found?
+     ↓              ↓
+REPLY MODE    Evaluate standalone
+(default)     quality
+     ↓              ↓
+Add tension/   IF score ≥ 85 → STANDALONE
+contrast/      IF score ≥ 90 + multi-stage → THREAD
+clarification  ELSE → ABANDON or reclassify
+     ↓
+POST EARLY
+(early velocity compounds)
+```
+
+---
+
 ## Thread Usage Rules
 
 Threads are **not default**. Only launch a thread if:
