@@ -6,7 +6,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/bc100000000000/orchestrator-opencode)](https://github.com/bc100000000000/orchestrator-opencode/network)
 [![MIT License](https://img.shields.io/github/license/bc100000000000/orchestrator-opencode)](https://github.com/bc100000000000/orchestrator-opencode/blob/main/LICENSE)
 
-**Multi-agent orchestration system with anti-hallucination safeguards and 90+ reusable skills.**
+**Multi-agent orchestration system with anti-hallucination safeguards and 100+ reusable skills.**
 
 [Features](#features) • [Agents](#agents) • [Skills](#skills) • [Examples](#examples) • [Contributing](#contributing)
 
@@ -73,9 +73,9 @@ All agents follow strict rules for deterministic, accurate outputs.
 
 | Feature | Description |
 |---------|-------------|
-| 14 Specialized Agents | Domain-specific specialists |
+| 16 Specialized Agents | Domain-specific specialists |
 | Anti-Hallucination | Deterministic, accurate outputs |
-| 90+ Skills | Reusable patterns from skills.sh |
+| 100+ Skills | Reusable patterns from skills.sh |
 | Consult Mode | Get expert advice (no changes) |
 | Delegate Mode | Get implementation (with changes) |
 | Granular Permissions | Agents ask before editing |
@@ -84,10 +84,10 @@ All agents follow strict rules for deterministic, accurate outputs.
 
 ## Agents
 
-**14 Specialist Agents** with 90+ skills from skills.sh ecosystem.
+**16 Specialist Agents** with 100+ skills from skills.sh ecosystem.
 
 ```
-ORCHESTRATOR (Primary Agent)
+ORCHESTRATOR (Primary Agent) |
 |
 +-- @frontend-developer   -> UI, React, Vue (15 skills)
 +-- @backend-architect    -> APIs, Databases (12 skills)
@@ -102,8 +102,10 @@ ORCHESTRATOR (Primary Agent)
 +-- @x-growth-operator    -> X/Twitter Growth (6 skills)
 +-- @x-trend-observer     -> X/Twitter Trends (3 skills)
 +-- @content-creator      -> Documentation, Copywriting (7 skills)
++-- @remotion             -> Programmatic Video, React Animations
++-- @blender-artist       -> 3D Modeling, Rendering, Animation *
 
-* Specialized domain - no general-purpose skills
+* Specialized domains
 ```
 
 ### Consult vs Delegate
@@ -117,7 +119,7 @@ ORCHESTRATOR (Primary Agent)
 
 ## Skills
 
-**90+ reusable skills** installed at `.opencode/skills/individual/`
+**100+ reusable skills** installed at `.opencode/skills/individual/`
 
 ### Skills by Agent
 
@@ -135,6 +137,8 @@ ORCHESTRATOR (Primary Agent)
 | @sprint-prioritizer | TDD, Code Review, Planning, Git Worktrees |
 | @x-growth-operator | Post to X, Cover Image, Slide Deck |
 | @x-trend-observer | Analytics Tracking, Social Content |
+| @remotion | Video Creation, Composition, Rendering |
+| @blender-artist | 3D Modeling, Materials, Lighting, Animation |
 
 ### Install More Skills
 
@@ -179,9 +183,10 @@ Result: Complete todo app! ✅
 ```
 orchestrator-opencode/
 +-- .opencode/
-|   +-- agents/              # 14 agent definitions
-|   +-- skills/              # 90+ skills (101MB)
+|   +-- agents/              # 16 agent definitions
+|   +-- skills/              # 100+ skills
 |   +-- plugins/
++-- blender_engine/          # Blender integration engine
 +-- README.md
 +-- LICENSE
 +-- CONTRIBUTING.md
