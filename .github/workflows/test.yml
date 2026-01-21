@@ -1,0 +1,42 @@
+name: Anti-Hallucination Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Anti-Hallucination Tests
+        run: |
+          echo "Running anti-hallucination tests..."
+          node .opencode/tests/test-runner.js
+        working-directory: .
+
+      - name: Check Agent Files
+        run: |
+          echo "Verifying all agent files exist..."
+          count=$(ls -1 .opencode/agents/*.md | wc -l)
+          if [ "$count" -ge 13 ]; then
+            echo "✓ Found $count agent files (expected: 13+)"
+          else
+            echo "✗ Only found $count agent files (expected: 13+)"
+            exit 1
+          fi
+
+      - name: Check Skills Directory
+        run: |
+          echo "Verifying skills directory..."
+          count=$(ls -1d .opencode/skills/individual/*/ | wc -l)
+          echo "✓ Found $count skills installed"
