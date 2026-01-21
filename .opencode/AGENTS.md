@@ -21,8 +21,10 @@ Comprehensive documentation of all agents in the OpenCode Orchestrator system wi
 | @x-growth-operator | XG | 6 | Post to X, Cover Image |
 | @x-trend-observer | XT | 3 | Analytics, Social |
 | @content-creator | CC | 7 | Copywriting, Docs |
+| @remotion | RV | 1 | Video Creation |
+| @blender-artist | BL | 1 | 3D Modeling |
 
-**Total: 97 skills across 13 subagents**
+**Total: 100 skills across 16 subagents**
 
 ---
 
@@ -255,6 +257,28 @@ Comprehensive documentation of all agents in the OpenCode Orchestrator system wi
 
 ---
 
+### 14. @remotion (RV-001)
+
+| ID | # | Skill | Source | Path |
+|----|---|-------|--------|------|
+| RV-001 | 1 | Remotion | opencode | skills/individual/remotion |
+
+**Expertise:** Video Creation, React Animations, Programmatic Video, Video Templates
+
+---
+
+### 15. @blender-artist (BL-001)
+
+| ID | # | Skill | Source | Path |
+|----|---|-------|--------|------|
+| BL-001 | 1 | Blender 3D Artist | opencode | blender_engine/blender_tool.py |
+
+**Expertise:** 3D Modeling, Rendering, Animation, Procedural Generation, Asset Export
+
+*Note: This agent is accessed via a dedicated translation layer in the orchestrator for deterministic command execution.*
+
+---
+
 ## Skills by Source
 
 | Source | Skills | Agents |
@@ -273,10 +297,12 @@ Comprehensive documentation of all agents in the OpenCode Orchestrator system wi
 | othmanadi/planning-with-files | 1 | SP |
 | kadajett/agent-nestjs-skills | 1 | BA |
 | dmmulroy/cloudflare-skill | 1 | BA, DA |
+| opencode/remotion | 1 | RV |
+| opencode/blender-artist | 1 | BL |
 
 ---
 
-## All Skills Index (97 total)
+## All Skills Index (100 total)
 
 | ID | Skill | Agent |
 |----|-------|-------|
@@ -306,87 +332,8 @@ Comprehensive documentation of all agents in the OpenCode Orchestrator system wi
 | CC-005 | Doc Coauthoring | @content-creator |
 | CC-006 | Brand Guidelines | @content-creator |
 | CC-007 | Writing Skills | @content-creator |
-| DA-001 | CI/CD Workflows | @devops-automator |
-| DA-002 | Deployment | @devops-automator |
-| DA-003 | NuxtHub | @devops-automator |
-| DA-004 | Cloudflare | @devops-automator |
-| DA-005 | Test Driven Development | @devops-automator |
-| DA-006 | Systematic Debugging | @devops-automator |
-| FD-001 | React Best Practices | @frontend-developer |
-| FD-002 | Web Design Guidelines | @frontend-developer |
-| FD-003 | Building UI | @frontend-developer |
-| FD-004 | Tailwind Setup | @frontend-developer |
-| FD-005 | Use DOM | @frontend-developer |
-| FD-006 | Frontend Design | @frontend-developer |
-| FD-007 | React Native Best Practices | @frontend-developer |
-| FD-008 | Web App Testing | @frontend-developer |
-| FD-009 | Theme Factory | @frontend-developer |
-| FD-010 | Web Artifacts Builder | @frontend-developer |
-| FD-011 | Vue | @frontend-developer |
-| FD-012 | Nuxt | @frontend-developer |
-| FD-013 | Nuxt UI | @frontend-developer |
-| FD-014 | Motion | @frontend-developer |
-| FD-015 | VueUse | @frontend-developer |
-| GH-001 | Analytics Tracking | @growth-hacker |
-| GH-002 | A/B Test Setup | @growth-hacker |
-| GH-003 | CRO - Page | @growth-hacker |
-| GH-004 | CRO - Form | @growth-hacker |
-| GH-005 | CRO - Popup | @growth-hacker |
-| GH-006 | CRO - Signup Flow | @growth-hacker |
-| GH-007 | CRO - Onboarding | @growth-hacker |
-| GH-008 | SEO Audit | @growth-hacker |
-| GH-009 | Schema Markup | @growth-hacker |
-| GH-010 | Email Sequence | @growth-hacker |
-| GH-011 | Social Content | @growth-hacker |
-| GH-012 | Pricing Strategy | @growth-hacker |
-| GH-013 | Referral Program | @growth-hacker |
-| MB-001 | React Native Best Practices | @mobile-app-builder |
-| MB-002 | Building UI | @mobile-app-builder |
-| MB-003 | Dev Client | @mobile-app-builder |
-| MB-004 | Deployment | @mobile-app-builder |
-| MB-005 | SwiftUI Performance Audit | @mobile-app-builder |
-| MB-006 | SwiftUI UI Patterns | @mobile-app-builder |
-| RP-001 | React Best Practices | @rapid-prototyper |
-| RP-002 | Web Design Guidelines | @rapid-prototyper |
-| RP-003 | Building UI | @rapid-prototyper |
-| RP-004 | 4 | Tailwind Setup | expo | skills/individual/tailwind-setup |
-| RP-005 | Data Fetching | @rapid-prototyper |
-| RP-006 | API Routes | @rapid-prototyper |
-| RP-007 | Deployment | @rapid-prototyper |
-| RP-008 | Nuxt | @rapid-prototyper |
-| RP-009 | Vue | @rapid-prototyper |
-| RP-010 | Nuxt UI | @rapid-prototyper |
-| RP-011 | Convex Best Practices | @rapid-prototyper |
-| RP-012 | Web Artifacts Builder | @rapid-prototyper |
-| SA-001 | Variant Analysis | @security-auditor |
-| SA-002 | Sharp Edges | @security-auditor |
-| SA-003 | Code Maturity Assessor | @security-auditor |
-| SA-004 | Fuzzing Obstacles | @security-auditor |
-| SA-005 | Coverage Analysis | @security-auditor |
-| SA-006 | Spec to Code Compliance | @security-auditor |
-| SA-007 | Convex Security Check | @security-auditor |
-| SA-008 | Convex Security Audit | @security-auditor |
-| SP-001 | Planning with Files | @sprint-prioritizer |
-| SP-002 | Test Driven Development | @sprint-prioritizer |
-| SP-003 | Systematic Debugging | @sprint-prioritizer |
-| SP-004 | Subagent Driven Development | @sprint-prioritizer |
-| SP-005 | Dispatching Parallel Agents | @sprint-prioritizer |
-| SP-006 | Executing Plans | @sprint-prioritizer |
-| SP-007 | Writing Plans | @sprint-prioritizer |
-| SP-008 | Verification Before Completion | @sprint-prioritizer |
-| SP-009 | Receiving Code Review | @sprint-prioritizer |
-| SP-010 | Requesting Code Review | @sprint-prioritizer |
-| SP-011 | Using Git Worktrees | @sprint-prioritizer |
-| SP-012 | Avoid Feature Creep | @sprint-prioritizer |
-| XG-001 | Post to X | @x-growth-operator |
-| XG-002 | Cover Image | @x-growth-operator |
-| XG-003 | Slide Deck | @x-growth-operator |
-| XG-004 | Social Content | @x-growth-operator |
-| XG-005 | Copywriting | @x-growth-operator |
-| XG-006 | Brainstorming | @x-growth-operator |
-| XT-001 | Analytics Tracking | @x-trend-observer |
-| XT-002 | Social Content | @x-trend-observer |
-| XT-003 | Brainstorming | @x-trend-observer |
+| RV-001 | Remotion | @remotion |
+| BL-001 | Blender 3D Artist | @blender-artist |
 
 ---
 
